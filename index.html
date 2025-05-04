@@ -5,92 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEM BOYZ MC ST LOUIS LLC</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+        }
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
             margin: 0;
             padding: 0;
         }
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #333;
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
         }
         .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
             background: #111;
             color: #fff;
-            text-align: center;
-            padding: 100px 20px;
         }
-        .hero h1 {
+        .hero-text {
+            max-width: 500px;
+            padding: 20px;
+        }
+        .hero-text h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+        .hero-text p {
+            font-size: 18px;
             line-height: 1.6;
         }
-        .about {
-            padding: 80px 20px;
+        .hero-img img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .section {
+            padding: 60px 20px;
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
-        .about h2 {
+        .section h2 {
             font-size: 32px;
             margin-bottom: 20px;
         }
-        .about p {
+        .section p {
             font-size: 18px;
             line-height: 1.8;
             color: #555;
         }
         .contact {
-            background: #f9f9f9;
+            background: #e9e9e9;
             padding: 60px 20px;
-            text-align: center;
-        }
-        .contact h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .contact p {
-            font-size: 16px;
-            margin: 8px 0;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
         footer {
-            background: #111;
+            background: #000;
             color: #fff;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>DEM BOYZ MC ST LOUIS LLC</h1>
-        <p>A dedicated Motorcycle Club and LLC based in St. Louis, committed to community engagement, unity, and passion for the ride. We bring together members with a shared love for motorcycles and brotherhood.</p>
+    <nav>
+        <div class="logo">DEM BOYZ MC</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero" id="home">
+        <div class="hero-text">
+            <h1>DEM BOYZ MC ST LOUIS LLC</h1>
+            <p>We are a Motorcycle Club based in St. Louis dedicated to unity, loyalty, and community service. Join us on the ride of a lifetime and be part of something bigger.</p>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Motorcycle Club">
+        </div>
     </div>
 
-    <div class="about">
+    <div class="section" id="about">
         <h2>About Us</h2>
-        <p>DEM BOYZ MC ST LOUIS LLC is an established Motorcycle Club and Limited Liability Company. Our mission is to promote safe riding, build lasting friendships, and give back to the community. We believe in loyalty, respect, and the power of unity through our shared passion for motorcycles.</p>
+        <p>DEM BOYZ MC ST LOUIS LLC is more than a club; it's a brotherhood. We are committed to safe riding, community engagement, and building strong connections among motorcycle enthusiasts. Our mission is to represent strength, respect, and loyalty both on and off the road.</p>
     </div>
 
-    <div class="contact" id="contact">
+    <div class="section contact" id="contact">
         <h2>Contact Us</h2>
-        <p><strong>Email:</strong><br>
-        <a href="mailto:sheron@demboyzllc.shop">sheron@demboyzllc.shop</a></p>
+        <p><strong>Email:</strong> <a href="mailto:sheron@demboyzllc.shop">sheron@demboyzllc.shop</a></p>
+        <p><strong>Location:</strong> St. Louis, MO, United States</p>
     </div>
 
     <footer>
