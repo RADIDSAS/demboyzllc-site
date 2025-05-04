@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEM BOYZ MC ST LOUIS LLC</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -20,6 +23,7 @@
             padding: 15px 30px;
             position: sticky;
             top: 0;
+            z-index: 1000;
         }
         nav .logo {
             font-size: 24px;
@@ -44,13 +48,16 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: #111;
             color: #fff;
+            min-height: 100vh;
+            animation: fadeIn 2s ease-in-out;
         }
         .hero-text {
             max-width: 500px;
             padding: 20px;
+            animation: slideInLeft 1.5s ease;
         }
         .hero-text h1 {
             font-size: 48px;
@@ -64,12 +71,20 @@
             max-width: 400px;
             width: 100%;
             border-radius: 10px;
+            animation: slideInRight 1.5s ease;
         }
         .section {
             padding: 60px 20px;
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section h2 {
             font-size: 32px;
@@ -90,6 +105,19 @@
             text-align: center;
             padding: 20px;
             font-size: 14px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
@@ -128,6 +156,24 @@
     <footer>
         &copy; 2025 DEM BOYZ MC ST LOUIS LLC. All rights reserved.
     </footer>
+
+    <script>
+        // Intersection Observer for fade-in effect
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 
 </body>
 </html>
